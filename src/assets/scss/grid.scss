@@ -1,0 +1,33 @@
+// Переменные
+
+// Ноутбуки
+$brLaptop: 1599.5px;
+// Планшеты
+$brTablet: 1199.5px;
+$brTabletMd: 1023.5px;
+$brTabletSm: 767.5px;
+// Телефоны
+$brMobile: 539.5px;
+$brMobileSm: 374.5px;
+
+.container {
+  // Локальные переменные - ширина контейнера
+  $containerWidth: 1440px;
+
+  margin: 0 auto;
+  width: 100%;
+  max-width: $containerWidth;
+
+  @media (max-width: $brLaptop) {
+    max-width: 1200px;
+  }
+
+  @media (max-width: $brTablet) {
+    padding: 0 40px;
+    max-width: 100%;
+  }
+
+  @media (max-width: $brTabletSm) {
+    padding: 0 16px;
+  }
+}

@@ -1,0 +1,164 @@
+.anim {
+  // Переменные
+
+  // Задержка анимации
+  $delay: 0.2s;
+  // Длительность анимации
+  $duration: 0.6s;
+
+  // Производные переменные от длительности анимации
+  $durationFaster: ($duration * 0.75);
+  $durationSlower: ($duration * 1.25);
+  $durationSlow: ($duration * 1.5);
+
+  // Размер смещения элемента
+  $distance: 200px;
+  // Производные переменные от размера смещения элемента
+  $distanceNeg: ($distance * -1);
+  $distanceVert: ($distance - 40px);
+  $distanceVertNeg: ($distanceVert * -1);
+
+  // Коэффициенты
+  $coefTablet: 0.95;
+  $coefMobile: 0.9;
+
+  // Брейкпоинты
+  $brTablet: 1199.5px;
+  $brTabletSm: 767.5px;
+  $brMobile: 539.5px;
+
+  // Основные стили анимаций
+
+  // По умолчанию используется анимация fade, плавное изменение прозрачности
+  opacity: 0;
+  transition-property: transform, opacity, visibility;
+  transition-timing-function: ease;
+  transition-delay: $delay;
+  transition-duration: $duration;
+
+  // Адаптивные стили
+  @media (max-width: $brTablet) {
+    // Убрать задержку анимации на планшетах и мобильных устройствах
+    transition-delay: 0s;
+    // Сократить длительность анимации на 25%
+    transition-duration: ($duration * $coefTablet);
+  }
+
+  @media (max-width: $brMobile) {
+    // Сократить длительность анимации на 33%
+    transition-duration: ($duration * $coefMobile);
+  }
+
+  &.slower {
+    transition-duration: $durationSlower;
+    @media (max-width: $brTablet) {
+      transition-duration: ($durationSlower * $coefTablet);
+    }
+
+    @media (max-width: $brMobile) {
+      transition-duration: ($durationSlower * $coefMobile);
+    }
+  }
+
+  &.slow {
+    transition-duration: $durationSlow;
+    @media (max-width: $brTablet) {
+      transition-duration: ($durationSlow * $coefTablet);
+    }
+
+    @media (max-width: $brMobile) {
+      transition-duration: ($durationSlow * $coefMobile);
+    }
+  }
+
+  &.faster {
+    transition-duration: $durationFaster;
+    @media (max-width: $brTablet) {
+      transition-duration: ($durationFaster * $coefTablet);
+    }
+
+    @media (max-width: $brMobile) {
+      transition-duration: ($durationFaster * $coefMobile);
+    }
+  }
+
+  &.slideLeft {
+    transform: translateX($distance);
+    @media (max-width: $brTablet) {
+      transform: translateX(($distance * $coefTablet));
+    }
+  }
+
+  &.slideRight {
+    transform: translateX($distanceNeg);
+    @media (max-width: $brTablet) {
+      transform: translateX(($distanceNeg * $coefTablet));
+    }
+  }
+
+  &.slideTop {
+    transform: translateY($distanceVert);
+    @media (max-width: $brTablet) {
+      transform: translateY(($distanceVert * $coefTablet));
+    }
+  }
+
+  &.slideBottom {
+    transform: translateY($distanceVertNeg);
+    @media (max-width: $brTablet) {
+      transform: translateY(($distanceVertNeg * $coefTablet));
+    }
+  }
+
+  &.slideReverse {
+    &.slideRight {
+      @media (max-width: $brTablet) {
+        transform: translateX(($distanceNeg * $coefTablet * -1));
+      }
+    }
+
+    &.slideLeft {
+      @media (max-width: $brTablet) {
+        transform: translateX(($distance * $coefTablet * -1));
+      }
+    }
+
+    &.shown {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  &.infinite {
+    // Добавьте класс к элементу для бесконечной анимации, при скролле вниз и вверх
+  }
+
+  &.shown {
+    // Класс добавляется для запуска анимации появления блока
+    opacity: 1;
+    transform: none;
+  }
+
+  // Класс для отключения эфекта прозрачности по умолчанию
+  &.nofade {
+    opacity: 1;
+  }
+
+  // Класс для полного отключения анимаций у элемента
+  &.noAnim {
+    transition: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  // Класс для отключения анимаций на мобильных устройствах и маленьких планшетах
+  &.noAnimOnMobile {
+    @media (max-width: $brTabletSm) {
+      transition: none;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+    }
+  }
+}

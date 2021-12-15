@@ -1,1 +1,14 @@
+// Сброс стилей
+@import "restart.scss";
 
+// Установка локальных шрифтов
+@import "fonts.scss";
+
+// Иконочный шрифт
+@import "iconfont.scss";
+
+// Сетка
+@import "grid.scss";
+
+// Основные стили
+@import "main.scss";

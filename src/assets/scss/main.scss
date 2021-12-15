@@ -1,0 +1,576 @@
+// Общие стили
+
+#root {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  background: white;
+}
+
+button {
+  height: auto;
+  width: auto;
+  background: none;
+  border: 0;
+  &:hover {
+    background: none;
+  }
+}
+
+.gotham,
+%tplFontGotham {
+  font-family: "Gotham Pro", sans-serif;
+}
+
+.row {
+  display: flex;
+}
+h1 {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: (80 / 60);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.logo {
+  width: 110px;
+  height: 51px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: (41 / 30);
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #765151;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: (22 / 16);
+  letter-spacing: 1.29565px;
+  text-transform: uppercase;
+  color: #765151;
+  text-align: center;
+}
+
+.container-header {
+  padding: 0;
+}
+
+// HEADER
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 680px;
+  @media (max-width: $brTabletSm) {
+    height: (216px + 48px);
+  }
+
+  &-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    .header-bg-desc {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .header-bg-mobile {
+      display: none;
+    }
+    @media (max-width: $brTabletSm) {
+      .header-bg-desc {
+        display: none;
+      }
+      .header-bg-mobile {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &-content {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    padding-top: 160px;
+    position: relative;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    @media (max-width: $brTabletSm) {
+      padding-top: 62px;
+    }
+  }
+
+  &-logo {
+    font-size: 51px;
+    margin-bottom: 16px;
+    color: white;
+    @media (max-width: $brTabletSm) {
+      font-size: 23px;
+      width: 50px;
+      height: 23px;
+      margin-bottom: 14px;
+    }
+  }
+  &-title {
+    color: white;
+    margin-bottom: 7px;
+    @media (max-width: $brTablet) {
+      font-size: 36px;
+      line-height: (64 / 36);
+      margin-bottom: -4px;
+    }
+    @media (max-width: $brTabletSm) {
+      font-size: 15px;
+      line-height: (25 / 15);
+      letter-spacing: 1px;
+      margin-bottom: -4px;
+    }
+  }
+  &-slogan {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: (40 / 30);
+    color: white;
+    margin-bottom: auto;
+    @media (max-width: $brTablet) {
+      font-size: 28px;
+      line-height: (38 / 28);
+    }
+    @media (max-width: $brTabletSm) {
+      font-size: 11px;
+      line-height: (15 / 11);
+    }
+  }
+  &-link {
+    display: block;
+    color: white;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: (41 / 30);
+    text-align: center;
+    margin-bottom: 26px;
+    &:hover {
+      color: white;
+    }
+    @media (max-width: $brTabletSm) {
+      font-size: 10px;
+      line-height: (14 / 10);
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// Секция под хедером с текстом-введением в акцию
+.intro {
+  padding: 48px 0;
+  @media (max-width: $brTabletSm) {
+    padding: 16px 0;
+  }
+  &-title {
+    margin-bottom: 24px;
+    @media (max-width: $brTabletSm) {
+      margin-bottom: 16px;
+      font-size: 14px;
+      line-height: (19 / 14);
+    }
+  }
+  &-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: (19 / 14);
+    text-align: center;
+    margin: 0 auto;
+    max-width: 504px;
+
+    p {
+      margin-bottom: 20px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    @media (max-width: $brTabletSm) {
+      font-size: 9px;
+      line-height: (13 / 9);
+      p {
+        margin-bottom: 14px;
+      }
+    }
+  }
+}
+
+// Секция с карточками
+.opportunities {
+  padding: 48px 0;
+  @media (max-width: $brTabletSm) {
+    padding: 16px 0;
+  }
+  background: #eae7e7;
+  &-title {
+    margin: 0 auto 36px auto;
+    //margin-bottom: 36px;
+    @media (max-width: $brTablet) {
+      max-width: 500px;
+    }
+    @media (max-width: $brTabletSm) {
+      font-size: 14px;
+      line-height: (19 / 14);
+      letter-spacing: 1px;
+      max-width: 280px;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.cards {
+  margin-bottom: 36px;
+  display: flex;
+  justify-content: center;
+  @media (max-width: $brTabletSm) {
+    margin-bottom: 16px;
+  }
+}
+
+.card {
+  background: white;
+  margin: 0 12px;
+  width: 268px;
+  height: 380px;
+  padding: 26px 0 0 0;
+
+  @media (max-width: $brTabletSm) {
+    margin: 0 4px;
+    width: 146px;
+    height: 230px;
+    padding-top: 16px;
+  }
+
+  &-title {
+    max-width: 241px;
+    margin: 0 auto 24px auto;
+    @media (max-width: $brTabletSm) {
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: $brTabletSm) {
+      font-size: 10px;
+      line-height: (14 / 10);
+      letter-spacing: 1px;
+    }
+  }
+
+  &-img {
+    width: 100%;
+    height: 147px;
+    margin-bottom: 24px;
+    @media (max-width: $brTabletSm) {
+      height: 80px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: (19 / 14);
+    text-align: center;
+    margin: 0 auto;
+    max-width: 242px;
+    @media (max-width: $brTabletSm) {
+      font-size: 8px;
+      line-height: (11 / 8);
+    }
+  }
+}
+
+.buttonMyPoints {
+  @extend %tplFontGotham;
+
+  width: 408px;
+  height: 47px;
+
+  background: #765151;
+
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: 3.46589px;
+  color: #f0e3df;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  margin: 0 auto;
+
+  &:hover {
+    background: #f0e3df;
+    color: #765151;
+    box-shadow: 0 0 2px 0 #765151;
+  }
+
+  @media (max-width: $brTabletSm) {
+    width: 269px;
+    height: 30px;
+    font-size: 12.0792px;
+    letter-spacing: 2.07954px;
+  }
+}
+
+.intouch {
+  background: #f0e3df;
+  padding: 48px 0;
+  @media (max-width: $brTabletSm) {
+    padding: 16px 0;
+  }
+  &-title {
+    max-width: 974px;
+    margin: 0 auto 24px auto;
+    @media (max-width: $brTablet) {
+      max-width: 720px;
+    }
+    @media (max-width: $brTabletSm) {
+      font-size: 12px;
+      line-height: (16 / 12);
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &-row {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .followus-text {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: (33 / 24);
+    letter-spacing: 1.77947px;
+    color: #765151;
+    margin-right: 12px;
+    text-transform: uppercase;
+    @media (max-width: $brTabletSm) {
+      font-size: 14px;
+      line-height: (19 / 14);
+      letter-spacing: 0.997932px;
+    }
+  }
+}
+
+.socials-link {
+  width: 30px;
+  height: 30px;
+  margin-right: 18px;
+  &:last-child {
+    margin-right: 0;
+  }
+  img {
+    //object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .iconfont {
+    color: #765151;
+    font-size: 30px;
+  }
+  @media (max-width: $brTabletSm) {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    .iconfont {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.faq {
+  padding: 48px 0 392px 0;
+  background: white;
+  @media (max-width: $brTablet) {
+    padding-bottom: 400px;
+  }
+  @media (max-width: $brTabletSm) {
+    padding: 34px 0 (22px - 14px) 0;
+    background: #f5f5f3;
+  }
+  &-title {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1;
+    text-align: center;
+    color: #404040;
+    text-transform: none;
+    margin-bottom: 36px;
+    @media (max-width: $brTabletSm) {
+      font-size: 20.48px;
+      line-height: (27 / 20.48);
+      letter-spacing: -0.426667px;
+      margin-bottom: 34px;
+    }
+  }
+
+  &-only-mobile {
+    display: none;
+    @media (max-width: $brTabletSm) {
+      display: block;
+      font-size: 8.53333px;
+      font-weight: 400;
+      line-height: (10 / 8.53);
+      letter-spacing: 2.048px;
+      text-transform: uppercase;
+      color: #000000;
+      margin-bottom: (27px - 8px);
+    }
+  }
+
+  &-only-mobile-bottom {
+    display: none;
+    @media (max-width: $brTabletSm) {
+      display: block;
+      background: white;
+      padding: 13px 0;
+      border-bottom: 0.85px solid #eceaeb;
+      font-weight: 400;
+      font-size: 10.24px;
+      line-height: 1.6;
+      text-align: center;
+      color: #9a9a9a;
+      width: 100%;
+      margin-bottom: 650px;
+      .content {
+        max-width: (187px + 16px + 16px);
+      }
+      a {
+        display: inline;
+        color: #966c33;
+        &:hover {
+          color: #966c33;
+        }
+      }
+    }
+  }
+}
+
+.question {
+  width: 100%;
+  padding: 24px 0;
+  border-top: 1px solid #adadad;
+  position: relative;
+  @media (max-width: $brTabletSm) {
+    transition: none;
+    padding: 8px 0 14px 0;
+    border-top: 0.853333px solid #e5e5e5;
+  }
+
+  &:first-child {
+    border-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: 1px solid #adadad;
+    @media (max-width: $brTabletSm) {
+      border-bottom: 0;
+    }
+  }
+
+  &::after {
+    @extend %tpliconfont;
+    content: $icon-arrow-down;
+    color: #966c33;
+    font-size: 14px;
+    display: block;
+    position: absolute;
+    top: 34px;
+    right: 10px;
+    z-index: 10;
+    @media (max-width: $brTabletSm) {
+      top: 15px;
+      font-size: 7px;
+    }
+  }
+  &-title {
+    position: relative;
+    z-index: 20;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: (27 / 20);
+    color: #404040;
+    transition: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media (max-width: $brTabletSm) {
+      font-size: 12px;
+      line-height: (15 / 12);
+      padding-right: (288 - 264) / 288 * 100%;
+    }
+  }
+
+  &-content {
+    max-width: 940px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #6e6e6e;
+
+    display: none;
+
+    @media (max-width: $brTabletSm) {
+      font-size: 9px;
+      line-height: (12 / 9);
+      color: #8e8e8e;
+    }
+  }
+
+  &.opened {
+    @media (max-width: $brTabletSm) {
+      font-weight: 400;
+      padding-bottom: 7px;
+    }
+    &::after {
+      transform: rotate(180deg);
+      color: #9a9a9a;
+      @media (max-width: $brTabletSm) {
+        transform: none;
+        color: #966c33;
+      }
+    }
+    .question-title {
+      font-weight: 700;
+      margin-bottom: 14px;
+      @media (max-width: $brTabletSm) {
+        font-weight: 400;
+        margin-bottom: 4px;
+      }
+    }
+
+    .question-content {
+      display: block;
+    }
+  }
+}

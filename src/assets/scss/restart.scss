@@ -1,0 +1,150 @@
+// Переменные
+$restartColorAccented: #279add;
+
+// Шаблоны и миксины
+
+// Сброс стилей
+
+* {
+  &::selection {
+    background: rgba($restartColorAccented, 0.25);
+  }
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html,
+body {
+  display: block;
+}
+
+// Сброс стилей для всех элементов
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  background: none;
+  box-sizing: border-box;
+  text-transform: none;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  background: white;
+  color: black;
+
+  // Наследование текстовых стилей для
+  * {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-align: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+
+  // Запретить анимации до загрузки DOM
+  &.beforeLoad {
+    * {
+      transition: none !important;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(grey, 0.25);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: grey;
+    border: 0;
+    //border-right: 4px solid lightgrey;
+    //border-right-width: 8px;
+    border-radius: 16px;
+  }
+}
+
+form {
+  display: block;
+}
+
+// Input
+input,
+.input {
+  display: block;
+  border: 1px solid $restartColorAccented;
+  width: 240px;
+  height: 40px;
+  padding: 0 10px;
+
+  // Плавное скрытие плейсхолдера
+  &:focus {
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+  // Плавный показ плейсхолдера
+  &::placeholder {
+    transition: 0.2s;
+    opacity: 1;
+  }
+}
+
+// Кнопки
+
+button,
+.button {
+  border: 1px solid $restartColorAccented;
+  color: $restartColorAccented;
+  width: 160px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+    background: $restartColorAccented;
+    color: white;
+  }
+}
+
+// Ссылки
+
+a,
+.link {
+  font-weight: 700;
+  &:hover {
+    cursor: pointer;
+    color: $restartColorAccented;
+  }
+}
+
+img,
+.img {
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+// Списки
+ul,
+ol {
+  list-style: none;
+}
