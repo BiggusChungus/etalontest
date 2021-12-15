@@ -1,0 +1,42 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "iconfont";
+  src: url("../fonts/iconfont.eot?ovwjx2");
+  src: url("../fonts/iconfont.eot?ovwjx2#iefix") format("embedded-opentype"), url("../fonts/iconfont.ttf?ovwjx2") format("truetype"), url("../fonts/iconfont.woff?ovwjx2") format("woff"), url("../fonts/iconfont.svg?ovwjx2#iconfont") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+.iconfont {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "iconfont" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-logo:before {
+  content: "";
+}
+
+.icon-arrow-down:before {
+  content: "";
+}
+
+.icon-arrow-down-bg:before {
+  content: "";
+}
+
+.icon-instagram:before {
+  content: "";
+}
+
+.icon-vk:before {
+  content: "";
+}
